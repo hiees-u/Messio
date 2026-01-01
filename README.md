@@ -1,122 +1,68 @@
-🔵 MESSIO
-Unified Messaging Platform for Modern Businesses
-1. What is Messio?
+# Messio  
+### Unified Messaging Platform for Modern Businesses
 
 Messio is a unified messaging platform that helps businesses manage customer conversations from multiple messaging channels in one centralized inbox.
 
-With Messio, businesses can connect multiple social pages and messaging accounts (such as Facebook Pages, Zalo OA, and more) into a single web application to receive, respond, and manage messages in real time, without any technical setup.
+With Messio, businesses can connect multiple social pages and messaging accounts (such as Facebook Pages, Zalo OA, and more) into a single web application to receive, respond to, and manage messages in real time — without any technical setup.
 
-No app creation.
-No tokens.
-No webhooks.
-Messio handles everything.
+> No app creation.  
+> No tokens.  
+> No webhooks.  
+> Messio handles everything.
 
-2. Problem Statement
-Before Messio
+---
 
-Businesses manage multiple fanpages and messaging accounts
+## 🚀 Features
 
-Messages are scattered across different platforms
+- 🔐 **Easy Channel Connection**  
+  Connect social pages and messaging accounts with a simple login and selection flow.
 
-High risk of missed or delayed responses
+- 📥 **Unified Inbox**  
+  Receive all messages from multiple channels in a single, organized inbox.
 
-Difficult to collaborate within teams
+- 💬 **Real-time Messaging**  
+  Send and receive messages instantly with live updates.
 
-No unified conversation history
+- 👥 **Conversation Management**  
+  Automatically group messages by customer and maintain full conversation history.
 
-With Messio
+- 🧑‍🤝‍🧑 **Team Collaboration**  
+  Support multiple agents with role-based access control.
 
-All messages in one inbox
+---
 
-Faster response times
-
-Better team collaboration
-
-Full conversation history per customer
-
-Professional customer experience
-
-3. Target Users
+## 🎯 Who Is Messio For?
 
 Messio is designed for:
-
-Online shop owners
-
-Small and medium-sized businesses
-
-Game and digital service shops
-
-Customer support teams
-
-Sales teams handling multiple channels
+- Online shop owners
+- Small and medium-sized businesses
+- Game and digital service providers
+- Customer support and sales teams
 
 No technical knowledge is required.
 
-4. Core Features
-🔐 1. Easy Channel Connection
+---
 
-Log in with social accounts
+## 🔄 High-Level User Flow
 
-Select pages/accounts to connect
-
-Messio automatically:
-
-Retrieves access tokens
-
-Subscribes webhooks
-
-Handles platform configuration
-
-📥 2. Unified Inbox
-
-All incoming messages from all channels in one place
-
-Clear labeling by channel and page
-
-Unread/read status tracking
-
-💬 3. Real-time Messaging
-
-Send and receive messages instantly
-
-No page refresh required
-
-WebSocket-based real-time updates
-
-👥 4. Conversation & Customer Management
-
-Messages grouped by customer
-
-Full conversation history
-
-Easy customer identification across channels
-
-🧑‍🤝‍🧑 5. Team Collaboration
-
-Multiple team members per workspace
-
-Role-based access control
-
-Prevent duplicate replies
-
-5. User Experience Flow (High Level)
 User signs up
-   ↓
+      ↓
 User logs in with Facebook
-   ↓
+            ↓
 Messio retrieves available pages
-   ↓
+               ↓
 User selects pages to connect
-   ↓
+               ↓
 Messio auto-configures integration
-   ↓
-Messages start flowing into unified inbox
+               ↓
+Messages start flowing into the unified inbox
 
+---
 
-⏱ Average setup time: under 2 minutes
+## 🧩 System Flow Diagrams
 
-6. SYSTEM FLOW DIAGRAMS
-🔹 Flow 1: Authentication & Page Connection
+### 1. Authentication & Page Connection
+
 [User Browser]
       |
       | Click "Connect Facebook"
@@ -139,16 +85,19 @@ Messages start flowing into unified inbox
       v
 [Connected Page Active]
 
-🔹 Flow 2: Incoming Message (Webhook)
+         ---
+
+### 2. Incoming Message (Webhook)
+
 Customer sends message
-      |
-      v
+         |
+         v
 [Facebook Page]
       |
       v
 [Facebook Webhook]
-      |
-      v
+         |
+         v
 [Messio Webhook Receiver]
       |
       | Identify workspace & page
@@ -156,136 +105,138 @@ Customer sends message
       | Store message
       v
 [Database]
-      |
-      v
-[WebSocket Emit]
+   |
+   v
+[Realtime Socket Emit]
       |
       v
 [Unified Inbox UI]
 
-🔹 Flow 3: Replying to a Message
+         ---
+
+### 3. Sending a Message
+
 Agent types message
-      |
-      v
+         |
+         v
 [Messio Web App]
       |
       v
 [Messio API: Send Message]
-      |
-      v
+         |
+         v
 [Facebook Send API]
-      |
-      v
+         |
+         v
 [Customer Receives Reply]
-      |
-      v
+            |
+            v
 [Message Status Updated]
 
-🔹 Flow 4: Realtime Messaging
+               ---
+
+### 4. Realtime Messaging
+
 New message event
-      |
-      v
+   |
+   v
 [Backend]
-      |
-      v
-[Socket.IO / WebSocket]
-      |
-      v
+   |
+   v
+[WebSocket / Socket.IO]
+         |
+         v
 [All Active Clients]
 
-🔹 Flow 5: Token Expiry & Reconnect
+---
+
+### 5. Token Expiry & Reconnect
+
 Facebook API call fails
       |
       v
 [Token Expired]
       |
       v
-[Mark Page as "Needs Reconnect"]
-      |
-      v
-[UI Notification]
-      |
-      v
-[User Reconnects Channel]
+[Page marked as NEEDS_RECONNECT]
+            |
+            v
+[User notified in UI]
+            |
+            v
+[User reconnects channel]
 
-7. Security & Compliance
+---
 
-Messio:
+## 🔐 Security & Compliance
 
-Uses only required permissions
+- Uses only required platform permissions
+- Does not send automated or spam messages
+- Allows users to disconnect channels at any time
+- Complies with Facebook Platform Policies
 
-Never sends automated or spam messages
+---
 
-Allows users to disconnect channels at any time
+## 🏗 Technical Architecture
 
-Does not access data beyond user authorization
-
-Compliant with:
-
-Facebook Platform Policy
-
-Data privacy best practices
-
-8. Technical Architecture Overview
 [Frontend (Web App)]
-        |
-        v
+      |
+      v
 [API Gateway]
-        |
-   ┌────┴─────────┐
-   v              v
+      |
+┌─────┴──────────┐
+v                v
 [OAuth Service] [Webhook Service]
-   |              |
-   v              v
-[Facebook API]  [Message Processor]
-                    |
-                    v
-               [Database]
-                    |
-                    v
-               [Realtime Socket]
+   |                |
+   v                v
+[Facebook API] [Message Processor]
+   |
+   v
+[Database]
+   |
+   v
+[Realtime Socket]
 
-9. Scalability & Future Expansion
+         ---
 
-Messio is built with scalability in mind:
+## 📈 Roadmap
 
-Multi-tenant architecture
+### Phase 1 – MVP
+- Facebook Pages integration
+- Unified inbox
+- Real-time messaging
 
-Async webhook processing
+### Phase 2
+- Zalo OA integration
+- Advanced team roles
+- Conversation tagging
 
-Queue-based message delivery
+### Phase 3
+- Automation rules
+- Analytics & reporting
+- AI-assisted replies
 
-Easy addition of new channels (Zalo, WhatsApp, Instagram)
+---
 
-10. Roadmap
-Phase 1 – MVP
+## 🏷 Brand Message
 
-Facebook Pages integration
+> **Messio — All Your Messages. One Inbox.**
 
-Unified inbox
+---
 
-Real-time messaging
+## 📌 License
 
-Phase 2
+MIT License (or specify your license here)
 
-Zalo OA integration
+---
 
-Advanced team roles
+## 🤝 Contributing
 
-Conversation tagging
+Contributions are welcome. Please open an issue or submit a pull request.
 
-Phase 3
+---
 
-Automation rules
+## 📬 Contact
 
-Analytics & reporting
+For questions or partnerships, please contact the Messio team.
 
-AI-assisted replies
-
-11. Brand Message
-
-Messio — All Your Messages. One Inbox.
-
-12. One-liner (for App Review / Pitch)
-
-Messio is a unified messaging platform that allows businesses to connect and manage customer conversations from multiple messaging channels in one centralized inbox, with real-time communication and no technical setup required.
