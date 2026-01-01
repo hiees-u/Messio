@@ -250,3 +250,195 @@ Contributions are welcome. Please open an issue or submit a pull request.
 ## 📬 Contact
 
 For questions or partnerships, please contact the Messio team.
+
+
+    --
+⏱️ THỜI GIAN TỔNG QUAN
+Giai đoạn	Thời gian	Kết quả
+Tuần 1	10–12h	BE nền + Facebook OAuth
+Tuần 2	10–12h	Webhook + Receive/Send message
+Tuần 3	8–10h	FE Inbox + realtime
+Tuần 4	6–8h	Polish + deploy + chuẩn bị review
+
+👉 Tổng: ~35–40 giờ
+
+🧠 NGUYÊN TẮC HỌC (RẤT QUAN TRỌNG)
+
+❌ Không học xong rồi mới code
+
+❌ Không xem tutorial lan man
+
+✅ Học 30% – Code 70%
+
+✅ Học đúng phần dùng ngay
+
+📅 KẾ HOẠCH CHI TIẾT THEO NGÀY
+🥇 TUẦN 1 – BACKEND CORE (NestJS + Facebook)
+Ngày 1 (2–3h)
+
+Học
+
+NestJS basics (module, controller, service)
+
+DI, ConfigModule
+
+Làm
+
+Init project NestJS
+
+Setup .env
+
+Health check API
+
+✅ Kết quả: Server chạy ổn
+
+Ngày 2 (2–3h)
+
+Học
+
+OAuth 2.0 flow (Facebook)
+
+Làm
+
+/auth/facebook
+
+/auth/facebook/callback
+
+Lưu user + token
+
+✅ Kết quả: Login Facebook thành công
+
+Ngày 3 (2–3h)
+
+Học
+
+Facebook Graph API (pages)
+
+Làm
+
+/pages
+
+Hiển thị danh sách fanpage
+
+✅ Kết quả: Thấy fanpage thật
+
+Ngày 4 (2–3h)
+
+Học
+
+Facebook Webhook concept
+
+Làm
+
+/webhook/facebook
+
+Verify webhook
+
+Log message
+
+✅ Kết quả: Nhắn fanpage → thấy log
+
+🥈 TUẦN 2 – MESSAGE FLOW
+Ngày 5 (2–3h)
+
+Học
+
+Facebook Send API
+
+Làm
+
+/messages/send
+
+Reply message
+
+✅ Kết quả: Reply được từ server
+
+Ngày 6 (2–3h)
+
+Học
+
+Multi-tenant design
+
+Làm
+
+Mapping page → workspace
+
+Lưu conversation
+
+✅ Kết quả: Inbox logic chuẩn
+
+Ngày 7 (2–3h)
+
+Học
+
+Realtime WebSocket
+
+Làm
+
+Socket gateway
+
+Push message
+
+✅ Kết quả: Message realtime
+
+🥉 TUẦN 3 – FRONTEND (Nuxt 3)
+Ngày 8 (2–3h)
+
+Học
+
+Nuxt 3 basics
+
+Làm
+
+Login UI
+
+Auth middleware
+
+Ngày 9 (2–3h)
+
+Làm
+
+Inbox UI
+
+Conversation list
+
+Ngày 10 (2–3h)
+
+Làm
+
+Chat box
+
+Realtime socket
+
+🏁 TUẦN 4 – POLISH + DEPLOY
+Ngày 11–12 (4–6h)
+
+Error handling
+
+Token refresh
+
+Permission check
+
+Deploy (Railway / Render)
+
+🛠️ CÔNG CỤ BẠN NÊN DÙNG
+Mục	Tool
+API test	Postman
+Realtime	Socket.IO
+DB	PostgreSQL
+ORM	Prisma
+Deploy	Railway
+Log	Pino
+⚠️ NHỮNG SAI LẦM CẦN TRÁNH
+
+❌ Làm UI đẹp quá sớm
+❌ Multi-channel khi Facebook chưa ổn
+❌ Code feature chưa test thật
+
+🎯 MỤC TIÊU MVP (RẤT RÕ)
+
+✔️ Login Facebook
+✔️ Connect fanpage
+✔️ Nhận tin nhắn
+✔️ Trả lời tin nhắn
+✔️ Inbox realtime
