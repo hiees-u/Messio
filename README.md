@@ -45,6 +45,7 @@ No technical knowledge is required.
 
 ## 🔄 High-Level User Flow
 
+```
 User signs up
       ↓
 User logs in with Facebook
@@ -56,6 +57,7 @@ User selects pages to connect
 Messio auto-configures integration
                ↓
 Messages start flowing into the unified inbox
+```
 
 ---
 
@@ -63,6 +65,7 @@ Messages start flowing into the unified inbox
 
 ### 1. Authentication & Page Connection
 
+```
 [User Browser]
       |
       | Click "Connect Facebook"
@@ -84,11 +87,13 @@ Messages start flowing into the unified inbox
       | Auto subscribe webhook
       v
 [Connected Page Active]
+```
 
-         ---
+---
 
 ### 2. Incoming Message (Webhook)
 
+```
 Customer sends message
          |
          v
@@ -111,11 +116,13 @@ Customer sends message
       |
       v
 [Unified Inbox UI]
+```
 
          ---
 
 ### 3. Sending a Message
 
+```
 Agent types message
          |
          v
@@ -132,11 +139,13 @@ Agent types message
             |
             v
 [Message Status Updated]
+```
 
-               ---
+---
 
 ### 4. Realtime Messaging
 
+```
 New message event
    |
    v
@@ -147,12 +156,12 @@ New message event
          |
          v
 [All Active Clients]
-
+```
 ---
 
 ### 5. Token Expiry & Reconnect
 
-Facebook API call fails
+```Facebook API call fails
       |
       v
 [Token Expired]
@@ -165,6 +174,7 @@ Facebook API call fails
             |
             v
 [User reconnects channel]
+```
 
 ---
 
@@ -178,7 +188,7 @@ Facebook API call fails
 ---
 
 ## 🏗 Technical Architecture
-
+```
 [Frontend (Web App)]
       |
       v
@@ -196,8 +206,9 @@ v                v
    |
    v
 [Realtime Socket]
+```
 
-         ---
+---
 
 ## 📈 Roadmap
 
@@ -226,7 +237,7 @@ v                v
 
 ## 📌 License
 
-MIT License (or specify your license here)
+MIT License
 
 ---
 
@@ -239,4 +250,3 @@ Contributions are welcome. Please open an issue or submit a pull request.
 ## 📬 Contact
 
 For questions or partnerships, please contact the Messio team.
-
