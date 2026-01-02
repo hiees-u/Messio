@@ -273,7 +273,9 @@ Tuần 4	6–8h	Polish + deploy + chuẩn bị review
 ✅ Học đúng phần dùng ngay
 
 📅 KẾ HOẠCH CHI TIẾT THEO NGÀY
+
 🥇 TUẦN 1 – BACKEND CORE (NestJS + Facebook)
+
 Ngày 1 (2–3h)
 
 Học
