@@ -444,3 +444,10 @@ Log	Pino
 ✔️ Nhận tin nhắn
 ✔️ Trả lời tin nhắn
 ✔️ Inbox realtime
+
+
+
+###INFORMATION###
+messio.developer@gmail.com - Hieuacong11@
+AppId: 988110483795087
+AppSecret: 1dba7925202d78e1247d25b78c694b35
